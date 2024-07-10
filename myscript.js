@@ -16,10 +16,12 @@ allButtons.addEventListener('click',(event) => {
             valueB += selected;
             screenText = valueB;
             readyToEquate = true;
+            screen.textContent = screenText;
         }
         else if(valueA.length < 9){
             valueA += selected;
             screenText = valueA;
+            screen.textContent = screenText;
         }
     }
     else if(OPERATOR.includes(selected)){
@@ -27,16 +29,19 @@ allButtons.addEventListener('click',(event) => {
             valueA = operate(valueA, valueB, selected);
             valueB = '';
             screenText = valueA;
+            screen.textContent = screenText;
         }
         else{
             operator = selected
             perfNextOp = true;
+            screen.textContent = screenText;
         }
     }
     else if(selected == '=' && perfNextOp && readyToEquate){
         valueA = operate(valueA, valueB, operator);
         screenText = valueA;
         valueB = '';
+        screen.textContent = screenText;
     }
     else if(selected == 'AC'){
         valueA = '';
@@ -45,8 +50,8 @@ allButtons.addEventListener('click',(event) => {
         screenText = '';
         perfNextOp = false;
         readyToEquate = false;
+        screen.textContent = screenText;
     }
-    screen.textContent = screenText;
 
 });
 function add(a, b){
@@ -58,11 +63,11 @@ function sub(a, b){
 }
 
 function divide(a, b){
-    return (a / b).toString();
+    return ((a / b).toPrecision(8)).toString();
 }
 
 function multiply(a,b){
-    return (a * b).toString();
+    return ((a * b).toPrecision(8)).toString();
 }
 
 function operate(a, b, op){
