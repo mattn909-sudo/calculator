@@ -1,8 +1,19 @@
-let valueA = 0;
-let valueB = 0;
+let valueA = '';
+let valueB = '';
 let operator = '';
 let perfNextOp = false;
+let screenText ='';
+const allButtons = document.querySelector('.calcContainer');
+const screen = document.querySelector(".screenRow");
 
+allButtons.addEventListener('click',(event) => {
+    let target = event.target;
+    if(target.tagName == 'BUTTON'){
+        screenText += target.textContent;
+        screen.textContent = screenText;
+    }
+    
+})
 function add(a, b){
     return a + b;
 }
