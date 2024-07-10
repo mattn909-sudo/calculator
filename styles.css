@@ -1,0 +1,36 @@
+.calcContainer{
+    background: #f2e3bb;
+    min-width: 400px;
+    min-height: 550px;
+    max-width: 400px;
+    max-height: 550px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.screenRow{
+    background-color: gray;
+    display: flex;
+    flex : 1;
+}
+.calcRow1, .calcRow2, .calcRow3, .calcRow4{
+    display: flex;
+    flex: 1;
+    color: black;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.number{
+    display: flex;
+    flex: 3;
+    justify-content: space-around;
+
+}
+
+.operator{
+    display:flex;
+    flex: 1;
+    justify-content: center;
+    background-color: orange;
+}
